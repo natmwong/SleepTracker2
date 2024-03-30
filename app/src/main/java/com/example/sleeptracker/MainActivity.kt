@@ -10,13 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
-    val sleepEntries: ArrayList<SleepEntry> = arrayListOf()
+    val sleepEntries: ArrayList<DisplayEntry> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Button declaration for SleepEntry item
+        //Button declaration for DisplayEntry item
         val entryButton = findViewById<Button>(R.id.entryButton)
 
         // Lookup the RecyclerView in activity layout

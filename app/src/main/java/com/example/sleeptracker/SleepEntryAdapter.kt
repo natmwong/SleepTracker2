@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class SleepEntryAdapter(private val mainActivity: MainActivity, private val entries: List<SleepEntry>) : RecyclerView.Adapter<SleepEntryAdapter.ViewHolder>() {
+class SleepEntryAdapter(private val mainActivity: MainActivity, private val entries: List<DisplayEntry>) : RecyclerView.Adapter<SleepEntryAdapter.ViewHolder>() {
     // Provide a direct reference to each of the views within a data item
     // Used to cache the views within the item layout for fast access
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
