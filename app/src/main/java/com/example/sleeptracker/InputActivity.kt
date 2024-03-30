@@ -29,7 +29,6 @@ class InputActivity : AppCompatActivity() {
             if (date.isNotBlank() && hours != null && quality.isNotBlank()) {
                 // Add the new sleep log to the database
                 lifecycleScope.launch(IO) {
-                    //(application as EntryApplication).db.sleepEntryDao().deleteAll()
                     (application as EntryApplication).db.sleepEntryDao()
                         .insert(SleepEntryEntity(0, date, hours, quality))
                 }
