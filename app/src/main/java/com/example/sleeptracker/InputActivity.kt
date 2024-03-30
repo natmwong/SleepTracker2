@@ -3,6 +3,7 @@ package com.example.sleeptracker
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers.IO
@@ -25,14 +26,19 @@ class InputActivity : AppCompatActivity() {
             val hours = hoursEt.text.toString().toInt()
             val quality = qualityEt.text.toString()
 
-            // Add the new sleep log to the database
-            lifecycleScope.launch(IO){
-                //(application as EntryApplication).db.sleepEntryDao().deleteAll()
-                (application as EntryApplication).db.sleepEntryDao().insert(SleepEntryEntity(0, date, hours, quality))
+            if (date.isNotBlank() && hours != null && quality.isNotBlank()) {
+                // Add the new sleep log to the database
+                lifecycleScope.launch(IO) {
+                    //(application as EntryApplication).db.sleepEntryDao().deleteAll()
+                    (application as EntryApplication).db.sleepEntryDao()
+                        .insert(SleepEntryEntity(0, date, hours, quality))
+                }
+                // Navigate back to the main activity
+                finish()
+            } else {
+                // Show a message to the user to fill in all fields
+                Toast.makeText(this, "Please fill in all fields.", Toast.LENGTH_SHORT).show()
             }
-
-            // Navigate back to the main activity
-            finish()
         }
     }
 }
