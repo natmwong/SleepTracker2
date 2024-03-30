@@ -46,8 +46,8 @@ class SleepEntryAdapter(private val mainActivity: MainActivity, private val entr
         // Get the data model based on position
         val entry = entries.get(position)
         // Set item views based on views and data model
-        holder.dateTextView.text = entry.date
-        holder.hoursTextView.text = entry.hours.toString()
-        holder.qualityTextView.text = entry.quality
+        holder.dateTextView.text = "Date: " + entry.date
+        holder.hoursTextView.text = "Hours of Sleep: " + entry.hours.toString()
+        holder.qualityTextView.text = "Quality of Sleep: " + entry.quality
     }
 }

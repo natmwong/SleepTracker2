@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.launch
 
 class InputActivity : AppCompatActivity() {
 
@@ -18,12 +21,15 @@ class InputActivity : AppCompatActivity() {
 
         // Set up the submit button
         recordButton.setOnClickListener {
-            val date = dateEt.text
+            val date = dateEt.text.toString()
             val hours = hoursEt.text.toString().toInt()
             val quality = qualityEt.text.toString()
 
             // Add the new sleep log to the database
-            databaseHelper.addSleepLog(SleepLog(date, quality, hours))
+            lifecycleScope.launch(IO){
+                //(application as EntryApplication).db.sleepEntryDao().deleteAll()
+                (application as EntryApplication).db.sleepEntryDao().insert(SleepEntryEntity(0, date, hours, quality))
+            }
 
             // Navigate back to the main activity
             finish()
