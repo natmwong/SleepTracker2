@@ -15,4 +15,13 @@ interface SleepEntryDao {
 
     @Query("DELETE FROM entry_table")
     fun deleteAll()
+
+    @Query("SELECT AVG(hours) FROM entry_table")
+    fun getAvgHours(): Flow<Float>
+
+    @Query("SELECT MIN(hours) FROM entry_table")
+    fun getMinHours(): Flow<Int>
+
+    @Query("SELECT MAX(hours) FROM entry_table")
+    fun getMaxHours(): Flow<Int>
 }
