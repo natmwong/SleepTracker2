@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="30dp"
+    android:layout_gravity="center">
 
     <GridLayout
         android:layout_width="wrap_content"
@@ -10,39 +11,49 @@
         android:columnCount="2"
         android:rowCount="3"
         android:alignmentMode="alignBounds"
+        android:gravity="center"
         android:useDefaultMargins="true">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textStyle="bold"
             android:text="Average Hours:" />
 
         <TextView
             android:id="@+id/avgHrs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="30sp"
             android:text="Avg Hours" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textStyle="bold"
             android:text="Minimum Hours:" />
 
         <TextView
             android:id="@+id/minHrs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="30sp"
             android:text="Min Hours" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textStyle="bold"
             android:text="Maximum Hours:" />
 
         <TextView
             android:id="@+id/maxHrs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="30sp"
             android:text="Max Hours" />
 
     </GridLayout>

@@ -37,7 +37,7 @@ class DashboardFragment : Fragment() {
         val viewModel = (activity?.application as EntryApplication)
 
         viewModel.db.sleepEntryDao().getAvgHours().asLiveData().observe(viewLifecycleOwner, Observer { value ->
-            avgHrs.text = value?.toString() ?: "0"
+            avgHrs.text = if (value != null) String.format("%.2f", value) else "0.00"
         })
 
         viewModel.db.sleepEntryDao().getMinHours().asLiveData().observe(viewLifecycleOwner, Observer { value ->
