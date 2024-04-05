@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.sleeptracker'
+    namespace 'com.example.sleeptracker2'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.sleeptracker"
+        applicationId "com.example.sleeptracker2"
         minSdk 24
         targetSdk 33
         versionCode 1

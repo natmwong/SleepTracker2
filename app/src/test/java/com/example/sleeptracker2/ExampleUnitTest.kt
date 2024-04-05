@@ -1,4 +1,4 @@
-package com.example.sleeptracker
+package com.example.sleeptracker2
 
 import org.junit.Test
 

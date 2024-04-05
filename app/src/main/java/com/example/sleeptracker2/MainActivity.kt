@@ -1,11 +1,9 @@
-package com.example.sleeptracker
+package com.example.sleeptracker2
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         val entryButton = findViewById<Button>(R.id.entryButton)
         val clearButton = findViewById<Button>(R.id.clearButton)
 
+        /* MOVED TO EntryListFragment
         // Lookup the RecyclerView in activity layout
         val entriesRv = findViewById<RecyclerView>(R.id.recyclerView)
 
@@ -48,6 +47,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+         */
 
         // Set up the button to navigate to the input page
         entryButton.setOnClickListener {

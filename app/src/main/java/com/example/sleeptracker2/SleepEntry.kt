@@ -1,4 +1,4 @@
-package com.example.sleeptracker
+package com.example.sleeptracker2
 
 class SleepEntry (
     val date: String,
